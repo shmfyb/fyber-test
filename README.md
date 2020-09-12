@@ -12,7 +12,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This project provides a consul local environment, and a flask application which sets/gets keys from the consul. The flask expose port 5000 and register with proxy listening on port 80 (service mesh)  
+This project provides a consul local environment, and a flask application which sets/gets keys from the consul. The flask exposes port 5000 and register with proxy listening on port 80 (service mesh)  
 
 <!-- GETTING STARTED -->
 ## Getting Started
