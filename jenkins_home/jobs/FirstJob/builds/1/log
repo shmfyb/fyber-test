@@ -1,0 +1,8 @@
+Started by user [8mha:////4MVgOPFfQiNS2YkzC7hdBVpwrLFCRz6gNvM7904gvbYeAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9tMqk1CIAo6YnjsAAAAA=[0mfyber
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/FirstJob
+[FirstJob] $ /bin/sh -xe /tmp/jenkins8436621666318467147.sh
++ docker exec agent consul agent -enable-script-checks -retry-join=server -data-dir=/consul/data -config-dir=/consul/consul.d -node=agent
+/tmp/jenkins8436621666318467147.sh: 2: /tmp/jenkins8436621666318467147.sh: docker: not found
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

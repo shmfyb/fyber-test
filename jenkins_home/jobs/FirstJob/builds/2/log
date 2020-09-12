@@ -1,0 +1,8 @@
+Started by user [8mha:////4MVgOPFfQiNS2YkzC7hdBVpwrLFCRz6gNvM7904gvbYeAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9tMqk1CIAo6YnjsAAAAA=[0mfyber
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/FirstJob
+[FirstJob] $ /bin/sh -xe /tmp/jenkins7191444944274915898.sh
++ docker exec agent consul agent -enable-script-checks -retry-join=server -data-dir=/consul/data -config-dir=/consul/consul.d -node=agent
+Error: No such container: agent
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
