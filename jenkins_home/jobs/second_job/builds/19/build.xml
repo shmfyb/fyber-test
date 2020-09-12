@@ -24,19 +24,12 @@
         </entry>
       </causeBag>
     </hudson.model.CauseAction>
-    <jenkins.model.InterruptedBuildAction>
-      <causes class="com.google.common.collect.ImmutableList">
-        <jenkins.model.CauseOfInterruption_-UserInterruption>
-          <user>fyber</user>
-        </jenkins.model.CauseOfInterruption_-UserInterruption>
-      </causes>
-    </jenkins.model.InterruptedBuildAction>
   </actions>
-  <queueId>30</queueId>
-  <timestamp>1599944233238</timestamp>
-  <startTime>1599944233259</startTime>
-  <result>ABORTED</result>
-  <duration>11940</duration>
+  <queueId>41</queueId>
+  <timestamp>1599948197709</timestamp>
+  <startTime>1599948197747</startTime>
+  <result>SUCCESS</result>
+  <duration>92646</duration>
   <charset>UTF-8</charset>
   <keepLog>false</keepLog>
   <builtOn></builtOn>

@@ -3,13 +3,13 @@ Running as SYSTEM
 Building in workspace /var/jenkins_home/workspace/FirstJob
 [WS-CLEANUP] Deleting project workspace...
 [WS-CLEANUP] Deferred wipeout is used...
-[FirstJob] $ /bin/sh -xe /tmp/jenkins3456371850784369495.sh
+[FirstJob] $ /bin/sh -xe /tmp/jenkins5904267348166924153.sh
 + mkdir local_env
 + git clone https://github.com/shmfyb/fyb-test.git local_env
 Cloning into 'local_env'...
 + cd local_env
 + docker build -t consul_local .
-Sending build context to Docker daemon  152.1kB
+Sending build context to Docker daemon  175.6kB
 Step 1/14 : FROM ubuntu:18.04
  ---> 6526a1858e5d
 Step 2/14 : RUN apt-get update && apt-get install -y     unzip     curl     vim     git     dnsutils     wget     nginx     ca-certificates     python3     python3-pip
@@ -34,22 +34,22 @@ Step 8/14 : COPY conf /consul/conf
  ---> Using cache
  ---> 008d61c875bb
 Step 9/14 : COPY consul.d /consul/consul.d
- ---> 12c077507cec
+ ---> 9aea085dbe69
 Step 10/14 : COPY app.py /app
- ---> 02a656fdf291
+ ---> 8dc4663c7888
 Step 11/14 : COPY requirements.txt /app
- ---> 0a333c5ab6f7
+ ---> 05939b24d581
 Step 12/14 : COPY entrypoint.sh .
- ---> 340346c16c53
+ ---> 881f3ca55ed3
 Step 13/14 : ENTRYPOINT ["/bin/bash","/entrypoint.sh"]
- ---> Running in 8e647284f2ca
-Removing intermediate container 8e647284f2ca
- ---> ddec6f1eeaa0
+ ---> Running in 9b470c1ef411
+Removing intermediate container 9b470c1ef411
+ ---> bb67b446299f
 Step 14/14 : CMD server
- ---> Running in 9fdba367c9c7
-Removing intermediate container 9fdba367c9c7
- ---> 6a31d7f34728
-Successfully built 6a31d7f34728
+ ---> Running in cb64504ec4aa
+Removing intermediate container cb64504ec4aa
+ ---> 4c5a0e665bcf
+Successfully built 4c5a0e665bcf
 Successfully tagged consul_local:latest
 [WS-CLEANUP] Deleting project workspace...
 [WS-CLEANUP] Deferred wipeout is used...

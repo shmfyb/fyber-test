@@ -5,13 +5,19 @@
       <safeParameters class="sorted-set"/>
       <parameters>
         <hudson.model.StringParameterValue>
-          <name>GIT_APP_URL</name>
-          <description></description>
-          <value>https://github.com/shmfyb/fyb-test.git</value>
+          <name>KEY</name>
+          <description>Name of key to set</description>
+          <value>test</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>VALUE</name>
+          <description>value to set </description>
+          <value>SHIMON_TO_FYBER</value>
         </hudson.model.StringParameterValue>
       </parameters>
       <parameterDefinitionNames>
-        <string>GIT_APP_URL</string>
+        <string>KEY</string>
+        <string>VALUE</string>
       </parameterDefinitionNames>
     </hudson.model.ParametersAction>
     <hudson.model.CauseAction>
@@ -25,15 +31,15 @@
       </causeBag>
     </hudson.model.CauseAction>
   </actions>
-  <queueId>25</queueId>
-  <timestamp>1599942423714</timestamp>
-  <startTime>1599942423729</startTime>
-  <result>SUCCESS</result>
-  <duration>6009</duration>
+  <queueId>42</queueId>
+  <timestamp>1599948302814</timestamp>
+  <startTime>1599948302832</startTime>
+  <result>FAILURE</result>
+  <duration>473</duration>
   <charset>UTF-8</charset>
   <keepLog>false</keepLog>
   <builtOn></builtOn>
-  <workspace>/var/jenkins_home/workspace/FirstJob</workspace>
+  <workspace>/var/jenkins_home/workspace/test_set_value</workspace>
   <hudsonVersion>2.249.1</hudsonVersion>
   <scm class="hudson.scm.NullChangeLogParser"/>
   <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
