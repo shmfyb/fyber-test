@@ -7,9 +7,9 @@
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
         <hudson.model.StringParameterDefinition>
-          <name>APP_GIT_URL</name>
+          <name>IMAGE_NAME</name>
           <description></description>
-          <defaultValue>https://github.com/shmfyb/fyb-test.git</defaultValue>
+          <defaultValue>consul_local</defaultValue>
           <trim>false</trim>
         </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
@@ -24,9 +24,16 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>docker exec agent git clone ${APP_GIT_URL} /app
-docker exec agent pip3 install -r /app/requirements.txt
-docker exec -d agent python3 app/app.py
+      <command>cd /opt/local_env_start
+export IMAGE_NAME=${IMAGE_NAME}
+source env.sh; rm -rf docker-compose.yml; envsubst &lt; &quot;template.yml&quot; &gt; &quot;docker-compose.yml&quot;
+docker-compose up -d
+echo &quot;init local consul env&quot;
+sleep(60)
+echo &quot;joining agent&quot;
+consul agent -enable-local-script-checks  -client=0.0.0.0 -retry-join  server -data-dir=/consul/data -config-dir=/consul/consul.d -node=agent
+sleep(60)
+echo &quot;connect proxys&quot;
 docker exec -d agent consul connect proxy -sidecar-for flask
 docker exec -d agent consul connect proxy -sidecar-for web</command>
       <configuredLocalRules/>

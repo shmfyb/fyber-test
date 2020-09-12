@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   server:
-    image: consul_local
+    image: ${CONSUL_IMAGE}
     container_name: server
     hostname: server
     ports:
@@ -15,29 +15,16 @@ services:
       - "8600:8600/udp"
     command: server
     volumes:
-      - ${PWD}/conf:/consul/conf
       - /var/run/docker.sock:/var/run/docker.sock
 
   agent:
-    image: consul_local
+    image: ${CONSUL_IMAGE}
     hostname: agent
     ports:
-    - 5000:5000
+      - 5000:5000
     container_name: agent
     depends_on:
       - server
     volumes:
-      - ${PWD}/consul.d:/consul/consul.d
       - /var/run/docker.sock:/var/run/docker.sock
-    command: ./entrypoint.sh agent
-
-  jenkins:
-    ports:
-    - 8080:8080
-    - 50000:50000
-    volumes:
-    - ${PWD}/jenkins_home/:/var/jenkins_home
-    - /var/run/docker.sock:/var/run/docker.sock
-    container_name: jenkins
-    build:
-      context: docker/jenkins
+    command: agent
