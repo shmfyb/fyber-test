@@ -31,8 +31,8 @@
   <builders>
     <hudson.tasks.Shell>
       <command>#!/bin/bash
-
-docker exec -d agent curl </command>
+set -e
+docker exec agent curl localhost:80/set_value?${KEY}=${VALUE}</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>

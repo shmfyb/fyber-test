@@ -1,2 +1,5 @@
 .idea/
 *.iml
+conf/
+consul.d/
+docker-compose.yml

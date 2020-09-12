@@ -1,13 +1,0 @@
-Started by user [8mha:////4MVgOPFfQiNS2YkzC7hdBVpwrLFCRz6gNvM7904gvbYeAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9tMqk1CIAo6YnjsAAAAA=[0mfyber
-Running as SYSTEM
-Building in workspace /var/jenkins_home/workspace/second_job
-[second_job] $ /bin/bash /tmp/jenkins4949912740205127585.sh
-Recreating server ... 
-[1A[2KRecreating server ... [32mdone[0m[1BRecreating agent  ... 
-[1A[2KRecreating agent  ... [32mdone[0m[1Binit local consul env
-joining agent
-connect proxys
-[WS-CLEANUP] Deleting project workspace...
-[WS-CLEANUP] Deferred wipeout is used...
-[WS-CLEANUP] done
-Finished: SUCCESS

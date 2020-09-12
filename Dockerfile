@@ -13,5 +13,3 @@ RUN chmod +x /usr/local/bin/docker-compose
 
 RUN mkdir /opt/local_env_start
 COPY template.yml /opt/local_env_start
-COPY env.sh /opt/local_env_start
-COPY docker-compose.yml /opt/local_env_start
