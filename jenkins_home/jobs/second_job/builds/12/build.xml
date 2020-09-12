@@ -25,11 +25,11 @@
       </causeBag>
     </hudson.model.CauseAction>
   </actions>
-  <queueId>16</queueId>
-  <timestamp>1599940160183</timestamp>
-  <startTime>1599940160196</startTime>
+  <queueId>26</queueId>
+  <timestamp>1599942439233</timestamp>
+  <startTime>1599942439247</startTime>
   <result>SUCCESS</result>
-  <duration>121034</duration>
+  <duration>116477</duration>
   <charset>UTF-8</charset>
   <keepLog>false</keepLog>
   <builtOn></builtOn>
