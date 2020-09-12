@@ -4,6 +4,14 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>-1</daysToKeep>
+        <numToKeep>5</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
         <hudson.model.StringParameterDefinition>
@@ -24,18 +32,21 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd /opt/local_env_start
+      <command>#!/bin/bash
+set -e
+cd /opt/local_env_start
 export IMAGE_NAME=${IMAGE_NAME}
 source env.sh; rm -rf docker-compose.yml; envsubst &lt; &quot;template.yml&quot; &gt; &quot;docker-compose.yml&quot;
 docker-compose up -d
 echo &quot;init local consul env&quot;
-sleep(60)
+sleep 30
 echo &quot;joining agent&quot;
-consul agent -enable-local-script-checks  -client=0.0.0.0 -retry-join  server -data-dir=/consul/data -config-dir=/consul/consul.d -node=agent
-sleep(60)
+docker exec -d agent consul agent -enable-local-script-checks  -client=0.0.0.0 -retry-join  server -data-dir=/consul/data -config-dir=/consul/consul.d -node=agent
+sleep 30
 echo &quot;connect proxys&quot;
 docker exec -d agent consul connect proxy -sidecar-for flask
-docker exec -d agent consul connect proxy -sidecar-for web</command>
+docker exec -d agent consul connect proxy -sidecar-for web
+sleep 30</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>
