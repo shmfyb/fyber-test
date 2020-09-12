@@ -3,12 +3,16 @@
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
-
+* [About the Project](#about-the-project)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
 
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+This project provides a consul local environment, and a flask application which sets/gets keys from the consul. The flask expose port 5000 and register with proxy listening on port 80 (service mesh)  
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -28,7 +32,7 @@
 ```sh
 git clone https://github.com/shmfyb/fyber-test.git
 ```
-2. Start jenkins server
+2. Start jenkins server (Pls notice that jenkins init can take a few minutes)
 ```sh
 make jenkins
 ```
