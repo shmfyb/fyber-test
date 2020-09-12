@@ -1,0 +1,57 @@
+Started by user [8mha:////4MVgOPFfQiNS2YkzC7hdBVpwrLFCRz6gNvM7904gvbYeAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9tMqk1CIAo6YnjsAAAAA=[0mfyber
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/FirstJob
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[FirstJob] $ /bin/sh -xe /tmp/jenkins3120864955810875639.sh
++ mkdir local_env
++ git clone https://github.com/shmfyb/fyb-test.git local_env
+Cloning into 'local_env'...
++ cd local_env
++ docker build -t consul_local .
+Sending build context to Docker daemon  142.8kB
+Step 1/14 : FROM ubuntu:18.04
+ ---> 6526a1858e5d
+Step 2/14 : RUN apt-get update && apt-get install -y     unzip     curl     vim     git     dnsutils     wget     nginx     ca-certificates     python3     python3-pip
+ ---> Using cache
+ ---> 6d93086dcfe3
+Step 3/14 : ARG CONSUL_VERSION=1.8.3
+ ---> Using cache
+ ---> 06a9da98399d
+Step 4/14 : ARG CONSUL_TEMPLATE_VERSION=0.20.0
+ ---> Using cache
+ ---> 47df0e215a8a
+Step 5/14 : RUN wget https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip -O /tmp/consul.zip; unzip /tmp/consul.zip -d /usr/local/bin/; rm /tmp/consul.zip
+ ---> Using cache
+ ---> 826ab82e23e3
+Step 6/14 : RUN wget https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip -O /tmp/consul-template.zip; unzip /tmp/consul-template.zip -d /usr/local/bin; rm /tmp/consul-template.zip
+ ---> Using cache
+ ---> 940dd7d88945
+Step 7/14 : RUN mkdir /app; mkdir /consul; mkdir /consul/consul.d; mkdir /consul/data; mkdir /consul/consul-template.d; mkdir /consul/conf
+ ---> Using cache
+ ---> edcafcb07137
+Step 8/14 : COPY conf /consul/conf
+ ---> Using cache
+ ---> 008d61c875bb
+Step 9/14 : COPY consul.d /consul/consul.d
+ ---> 3c315e829f40
+Step 10/14 : COPY app.py /app
+ ---> da3872d0513f
+Step 11/14 : COPY requirements.txt /app
+ ---> 3b146c599a55
+Step 12/14 : COPY entrypoint.sh .
+ ---> b47f9d669fb0
+Step 13/14 : ENTRYPOINT ["/bin/bash","/entrypoint.sh"]
+ ---> Running in b912c393770a
+Removing intermediate container b912c393770a
+ ---> 42fcf8d1788d
+Step 14/14 : CMD server
+ ---> Running in f95206fd2ee4
+Removing intermediate container f95206fd2ee4
+ ---> ae2f68892ec2
+Successfully built ae2f68892ec2
+Successfully tagged consul_local:latest
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] done
+Finished: SUCCESS

@@ -1,0 +1,8 @@
+Started by user [8mha:////4MVgOPFfQiNS2YkzC7hdBVpwrLFCRz6gNvM7904gvbYeAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9tMqk1CIAo6YnjsAAAAA=[0mfyber
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/second_job
+[second_job] $ /bin/bash /tmp/jenkins2042690769357872394.sh
+Starting server ... 
+[1A[2KStarting server ... [32mdone[0m[1BStarting agent  ... 
+[1A[2KStarting agent  ... [32mdone[0m[1Binit local consul env
+joining agent
