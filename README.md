@@ -14,6 +14,7 @@
 ## About The Project
 This project provides a consul local environment, and a flask application which sets/gets keys from the consul. The flask exposes port 5000 and register with proxy listening on port 80 (service mesh)  
 
+`* Due to network issues with localhost at mac the env has 2 containers (server in 1 container and application with sidecar agent on the other`
 <!-- GETTING STARTED -->
 ## Getting Started
 
